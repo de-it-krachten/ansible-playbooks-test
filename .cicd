@@ -1,0 +1,34 @@
+---
+
+# Generic
+playbook: ansible-playbooks-test
+playbook_description: |
+  test playbooks
+
+# Github
+github:
+  active: false
+  self_hosted: false
+  owner: ncr-tooling
+  repo: ansible-playbooks-test
+
+# Gitlab
+gitlab:
+  active: true
+
+# templates
+ci_templates:
+  - src:  yamllint/templates/yamllint
+    dest: .yamllint
+  - src:  github/templates/ci.yml
+    dest: .github/workflows/ci.yml
+    when: github_runner_cloud
+  - src:  github/templates/ci-self-hosted.yml
+    dest: .github/workflows/ci.yml
+    when: github_runner_self_hosted
+  - src:  gitlab/templates/gitlab-ci.yml
+    dest: .gitlab-ci.yml
+    when: gitlab_active
+  - src:  git/templates/gitignore
+    dest: .gitignore
+    force: false
