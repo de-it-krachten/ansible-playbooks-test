@@ -2,9 +2,5 @@
 
 - hosts: all
   gather_facts: yes
-  tasks:
-    - name: Show FQDN
-      debug: var=ansible_fqdn
-
-    - name: Show OS family
-      debug: var=ansible_os_family
+  roles:
+    - deitkrachten.showinfo

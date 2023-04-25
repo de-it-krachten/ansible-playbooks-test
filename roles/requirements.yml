@@ -1,5 +1,9 @@
 ---
 
+collections: []
+
 roles:
-  - robertdebock.epel
-  - robertdebock.powertools
+  - name: deitkrachten.showinfo
+    src: https://github.com/de-it-krachten/ansible-role-showinfo.git
+    version: dev
+    scm: git
