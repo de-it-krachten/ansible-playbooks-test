@@ -1,9 +1,6 @@
 ---
 
-collections: []
-
-roles:
-  - name: deitkrachten.showinfo
-    src: https://github.com/de-it-krachten/ansible-role-showinfo.git
-    version: dev
-    scm: git
+- name: deitkrachten.showinfo
+  src: https://github.com/de-it-krachten/ansible-role-showinfo.git
+  version: dev
+  scm: git
